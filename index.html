@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Force 007 - সাধারণ জ্ঞান কুইজ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <header>
+            <h1>Black Force 007</h1>
+            <h2>সাধারণ জ্ঞান বিষয় কুইজ</h2>
+        </header>
+        <main>
+            <section id="question-section" class="card">
+                <div id="question-meta">
+                    <span id="timer"></span>
+                    <span id="score"></span>
+                </div>
+                <div id="question-box">
+                    <div id="question"></div>
+                    <div id="options"></div>
+                </div>
+                <div id="feedback"></div>
+            </section>
+            <section id="result-section" class="card hidden">
+                <h3>ফলাফল</h3>
+                <p id="final-score"></p>
+                <p id="final-details"></p>
+                <button onclick="restartQuiz()">পুনরায় শুরু করুন</button>
+            </section>
+            <section id="leaderboard-section" class="card">
+                <h3>লিডারবোর্ড</h3>
+                <ol id="leaderboard"></ol>
+            </section>
+            <section id="achievements-section" class="card">
+                <h3>অ্যাচিভমেন্টস & ব্যাজ</h3>
+                <div id="achievements"></div>
+            </section>
+        </main>
+        <footer>
+            <small>© 2025 Black Force 007 | মোবাইল ফ্রেন্ডলি কুইজ ইঞ্জিন</small>
+        </footer>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
