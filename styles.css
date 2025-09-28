@@ -1,0 +1,197 @@
+:root {
+    --primary: #18181a;
+    --secondary: #1d4ed8;
+    --accent: #f59e42;
+    --correct: #22c55e;
+    --wrong: #ef4444;
+    --gold: #fbbf24;
+    --silver: #d1d5db;
+    --bronze: #a78bfa;
+    --background: #f3f4f6;
+    --card-bg: #fff;
+    --card-shadow: 0 2px 16px rgba(0,0,0,0.1);
+    --border-radius: 18px;
+    --font-family: 'Segoe UI', 'Noto Sans Bengali', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f59e42 0%, #1d4ed8 100%);
+    min-height: 100vh;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+#quiz-container {
+    max-width: 420px;
+    width: 96vw;
+    background: var(--background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+header {
+    text-align: center;
+    margin-bottom: 8px;
+}
+header h1 {
+    color: var(--primary);
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    margin: 0;
+}
+header h2 {
+    color: var(--secondary);
+    font-size: 1.1em;
+    margin: 0;
+    margin-top: 3px;
+}
+.card {
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+    padding: 18px;
+    margin-bottom: 10px;
+}
+#question-section {
+    min-height: 220px;
+    transition: background 0.5s;
+}
+#question-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+#timer {
+    color: var(--accent);
+    font-weight: bold;
+}
+#score {
+    color: var(--secondary);
+    font-weight: bold;
+}
+#question {
+    font-size: 1.18em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.option-btn {
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.option-btn.correct {
+    background: var(--correct);
+    color: #fff;
+}
+.option-btn.wrong {
+    background: var(--wrong);
+    color: #fff;
+}
+.option-btn.disabled {
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+#feedback {
+    margin-top: 12px;
+    font-size: 1.1em;
+    min-height: 28px;
+    font-weight: 600;
+}
+#feedback.correct {
+    color: var(--correct);
+    animation: pop 0.3s;
+}
+#feedback.wrong {
+    color: var(--wrong);
+    animation: shake 0.3s;
+}
+@keyframes pop {
+    0% { transform: scale(0.8);}
+    80% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+@keyframes shake {
+    0% { transform: translateX(-5px);}
+    50% { transform: translateX(5px);}
+    100% { transform: translateX(0);}
+}
+#result-section {
+    text-align: center;
+}
+#result-section button {
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-size: 1em;
+    cursor: pointer;
+}
+#leaderboard-section {
+    background: #f1fbff;
+}
+#leaderboard {
+    padding-left: 18px;
+    margin: 0;
+}
+#leaderboard li {
+    font-size: 1em;
+    padding: 2px 0;
+}
+#leaderboard li.gold { color: var(--gold); font-weight: 600; }
+#leaderboard li.silver { color: var(--silver); font-weight: 600; }
+#leaderboard li.bronze { color: var(--bronze); font-weight: 600; }
+#achievements-section {
+    background: #fffbe7;
+}
+#achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 6px;
+}
+.achievement {
+    background: var(--gold);
+    color: var(--primary);
+    font-size: 0.95em;
+    border-radius: 7px;
+    padding: 5px 13px;
+    font-weight: 600;
+    box-shadow: 0 1px 4px #eab30844;
+}
+footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.97em;
+    margin-top: 15px;
+}
+.hidden {
+    display: none !important;
+}
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 6px;
+    }
+    .card {
+        padding: 10px;
+    }
+}
